@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Jamuan Akhir Tahun Pengawas 2026</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; display:flex; justify-content:center; align-items:center;
+    font-family:Georgia, "Times New Roman", serif;
+    background:linear-gradient(135deg,#111 0%,#2b2520 48%,#0d0d0d 100%);
+    color:#f7f0df; padding:24px; overflow-x:hidden;
+  }
+  .sparkle{position:fixed; inset:0; pointer-events:none; opacity:.55;
+    background-image:radial-gradient(circle,#fff 1px,transparent 1.5px);
+    background-size:70px 70px; animation:drift 12s linear infinite}
+  @keyframes drift{from{transform:translateY(0)}to{transform:translateY(70px)}}
+  .card{
+    width:min(760px,100%); position:relative; overflow:hidden;
+    border:1px solid #c8a96b; border-radius:28px;
+    background:rgba(20,18,16,.92); box-shadow:0 25px 80px rgba(0,0,0,.55);
+  }
+  .goldline{height:7px;background:linear-gradient(90deg,#8b6a32,#f4df9b,#9a7635,#f4df9b,#8b6a32)}
+  .content{text-align:center;padding:54px 38px 42px}
+  .eyebrow{letter-spacing:5px;font-size:13px;color:#e0c37b}
+  h1{font-size:clamp(34px,7vw,62px);line-height:1.02;margin:18px 0 10px;text-transform:uppercase;letter-spacing:2px}
+  .year{font-size:24px;letter-spacing:8px;color:#d6b86f}
+  .divider{width:100px;height:1px;background:#c8a96b;margin:28px auto}
+  .intro{font-size:18px;line-height:1.7;max-width:580px;margin:auto;color:#e9dfcc}
+  .details{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:35px 0}
+  .detail{padding:18px 10px;border:1px solid rgba(200,169,107,.45);border-radius:16px;background:rgba(255,255,255,.035)}
+  .icon{font-size:22px;margin-bottom:8px}.label{font-size:11px;letter-spacing:2px;color:#c8a96b;text-transform:uppercase}
+  .value{margin-top:7px;font-size:16px;line-height:1.4}
+  .theme{margin:28px auto;padding:18px;border-radius:16px;background:linear-gradient(90deg,rgba(200,169,107,.08),rgba(255,255,255,.03),rgba(200,169,107,.08))}
+  .theme strong{display:block;color:#e0c37b;letter-spacing:3px;font-size:13px;margin-bottom:7px}
+  .theme span{font-size:22px}
+  .buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+  a,.btn{display:inline-block;text-decoration:none;color:#17130e;background:#e2c77f;border:0;border-radius:999px;padding:13px 22px;font-weight:bold;cursor:pointer;font-family:inherit}
+  .secondary{background:transparent;color:#e2c77f;border:1px solid #a98a4d}
+  .footer{margin-top:34px;color:#a99d88;font-size:13px;letter-spacing:1px}
+  @media(max-width:600px){.content{padding:42px 20px 32px}.details{grid-template-columns:1fr}.intro{font-size:16px}}
+
+  .music-control{position:fixed;right:16px;bottom:16px;z-index:10}
+  .music-btn{border:1px solid #c8a96b;background:rgba(20,18,16,.94);color:#e2c77f;border-radius:999px;padding:11px 15px;font:inherit;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+  .music-btn.playing{background:#e2c77f;color:#17130e}
+
+  .qr-wrap{margin:28px auto 0;padding:18px;border:1px solid rgba(200,169,107,.45);border-radius:16px;background:rgba(255,255,255,.035);max-width:260px}
+  .qr-wrap img{width:190px;height:190px;display:block;margin:10px auto;background:#fff;padding:8px;border-radius:10px}
+  .qr-note{font-size:12px;color:#a99d88;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="sparkle"></div>
+<audio id="bgMusic" preload="auto" loop playsinline>
+  <source src="golden-hour-piano.mp3" type="audio/mpeg">
+</audio>
+<div class="music-control">
+  <button id="musicBtn" class="music-btn" type="button" aria-label="Mainkan muzik">♫ Muzik</button>
+</div>
+<main class="card">
+  <div class="goldline"></div>
+  <section class="content">
+    <div class="eyebrow">YOU ARE CORDIALLY INVITED</div>
+    <h1>Jamuan Akhir Tahun<br>Pengawas</h1>
+    <div class="year">2026</div>
+    <div class="divider"></div>
+    <p class="intro">
+      Marilah kita bersama-sama meraikan satu tahun penuh usaha, kerjasama
+      dan kenangan. Hadir dan jadikan malam ini sebuah kenangan yang indah.
+    </p>
+
+    <div class="details">
+      <div class="detail">
+        <div class="icon">📅</div><div class="label">Tarikh</div>
+        <div class="value">22 Oktober 2026</div>
+      </div>
+      <div class="detail">
+        <div class="icon">📍</div><div class="label">Tempat</div>
+        <div class="value">RABU Malaysian<br>Western Cuisine</div>
+      </div>
+      <div class="detail">
+        <div class="icon">✨</div><div class="label">Dress Code</div>
+        <div class="value">Elegant</div>
+      </div>
+    </div>
+
+    <div class="theme">
+      <strong>AN EVENING TO REMEMBER</strong>
+      <span>Celebration • Appreciation • Memories</span>
+    </div>
+
+    <div class="buttons">
+      <a href="https://forms.google.com/" target="_blank">✨ RSVP Kehadiran</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=RABU%20Malaysian%20Western%20Cuisine" target="_blank" class="secondary">📍 View Location</a>
+      <button class="btn secondary" onclick="shareInvite()">↗ Share Invitation</button>
+    </div>
+
+    <div class="qr-wrap">
+  <div class="label">QR CODE JEMPUTAN</div>
+  <img id="qrCode" alt="QR code untuk membuka jemputan" loading="eager">
+  <div id="qrNote" class="qr-note">Imbas untuk membuka jemputan pada telefon.</div>
+</div>
+\n    <div class="footer">WITH APPRECIATION • 2026</div>
+  </section>
+</main>
+<script>
+function shareInvite(){
+  const shareData = {
+    title:'Jamuan Akhir Tahun Pengawas 2026',
+    text:'You are invited to the Jamuan Akhir Tahun Pengawas 2026 — 22 October 2026 at RABU Malaysian Western Cuisine.',
+    url:location.href
+  };
+  if(navigator.share){
+    navigator.share(shareData).catch(()=>{});
+  }else if(navigator.clipboard){
+    navigator.clipboard.writeText(location.href).then(()=>alert('Invitation link copied!'));
+  }else{
+    alert('Salin alamat halaman ini untuk berkongsi.');
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("bgMusic");
+  const btn = document.getElementById("musicBtn");
+  audio.volume = 0.45;
+
+  const updateButton = () => {
+    const playing = !audio.paused;
+    btn.classList.toggle("playing", playing);
+    btn.textContent = playing ? "♫ Muzik ON" : "♫ Muzik";
+    btn.setAttribute("aria-label", playing ? "Hentikan muzik" : "Mainkan muzik");
+  };
+
+  const startMusic = () => {
+    audio.play().then(updateButton).catch(updateButton);
+  };
+
+  // Autoplay is attempted immediately. Mobile browsers may require one user gesture.
+  startMusic();
+
+  // First tap/click/keyboard interaction unlocks audio when autoplay was blocked.
+  const unlock = () => {
+    startMusic();
+    window.removeEventListener("pointerdown", unlock);
+    window.removeEventListener("keydown", unlock);
+  };
+  window.addEventListener("pointerdown", unlock, {passive:true});
+  window.addEventListener("keydown", unlock);
+
+  btn.addEventListener("click", (event) => {
+    event.stopPropagation();
+    if(audio.paused) audio.play().then(updateButton).catch(updateButton);
+    else { audio.pause(); updateButton(); }
+  });
+
+
+
+  // Generate a QR for the current public HTTPS/HTTP page URL.
+  // It becomes functional automatically once this page is hosted online.
+  const qr = document.getElementById("qrCode");
+  const qrNote = document.getElementById("qrNote");
+  if (qr) {
+    const pageUrl = location.href;
+    if (/^https?:$/i.test(location.protocol)) {
+      qr.src = "https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=10&data=" + encodeURIComponent(pageUrl);
+    } else {
+      qr.style.display = "none";
+      qrNote.textContent = "QR akan aktif apabila jemputan ini dibuka melalui pautan web (https://...).";
+    }
+  }
+
+  audio.addEventListener("play", updateButton);
+  audio.addEventListener("pause", updateButton);
+  audio.addEventListener("ended", () => {
+    // Extra safeguard; loop=true should already restart it.
+    audio.currentTime = 0;
+    startMusic();
+  });
+});
+</script>
+</body>
+</html>
