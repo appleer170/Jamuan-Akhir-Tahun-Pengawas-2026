@@ -41,9 +41,6 @@
   .footer{margin-top:34px;color:#a99d88;font-size:13px;letter-spacing:1px}
   @media(max-width:600px){.content{padding:42px 20px 32px}.details{grid-template-columns:1fr}.intro{font-size:16px}}
 
-  .music-control{position:fixed;right:16px;bottom:16px;z-index:10}
-  .music-btn{border:1px solid #c8a96b;background:rgba(20,18,16,.94);color:#e2c77f;border-radius:999px;padding:11px 15px;font:inherit;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.35)}
-  .music-btn.playing{background:#e2c77f;color:#17130e}
 
   .qr-wrap{margin:28px auto 0;padding:18px;border:1px solid rgba(200,169,107,.45);border-radius:16px;background:rgba(255,255,255,.035);max-width:260px}
   .qr-wrap img{width:190px;height:190px;display:block;margin:10px auto;background:#fff;padding:8px;border-radius:10px}
@@ -52,12 +49,6 @@
 </head>
 <body>
 <div class="sparkle"></div>
-<audio id="bgMusic" preload="auto" loop playsinline>
-<source src="music.mp3" type="audio/mpeg">
-</audio>
-<div class="music-control">
-  <button id="musicBtn" class="music-btn" type="button" aria-label="Mainkan muzik">♫ Muzik</button>
-</div>
 <main class="card">
   <div class="goldline"></div>
   <section class="content">
@@ -91,7 +82,6 @@
     </div>
 
     <div class="buttons">
-      <a href="https://forms.google.com/" target="_blank">✨ RSVP Kehadiran</a>
       <a href="https://www.google.com/maps/search/?api=1&query=RABU%20Malaysian%20Western%20Cuisine" target="_blank" class="secondary">📍 View Location</a>
       <button class="btn secondary" onclick="shareInvite()">↗ Share Invitation</button>
     </div>
@@ -121,40 +111,6 @@ function shareInvite(){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const audio = document.getElementById("bgMusic");
-  const btn = document.getElementById("musicBtn");
-  audio.volume = 0.45;
-
-  const updateButton = () => {
-    const playing = !audio.paused;
-    btn.classList.toggle("playing", playing);
-    btn.textContent = playing ? "♫ Muzik ON" : "♫ Muzik";
-    btn.setAttribute("aria-label", playing ? "Hentikan muzik" : "Mainkan muzik");
-  };
-
-  const startMusic = () => {
-    audio.play().then(updateButton).catch(updateButton);
-  };
-
-  // Autoplay is attempted immediately. Mobile browsers may require one user gesture.
-  startMusic();
-
-  // First tap/click/keyboard interaction unlocks audio when autoplay was blocked.
-  const unlock = () => {
-    startMusic();
-    window.removeEventListener("pointerdown", unlock);
-    window.removeEventListener("keydown", unlock);
-  };
-  window.addEventListener("pointerdown", unlock, {passive:true});
-  window.addEventListener("keydown", unlock);
-
-  btn.addEventListener("click", (event) => {
-    event.stopPropagation();
-    if(audio.paused) audio.play().then(updateButton).catch(updateButton);
-    else { audio.pause(); updateButton(); }
-  });
-
-
 
   // Generate a QR for the current public HTTPS/HTTP page URL.
   // It becomes functional automatically once this page is hosted online.
@@ -170,13 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  audio.addEventListener("play", updateButton);
-  audio.addEventListener("pause", updateButton);
-  audio.addEventListener("ended", () => {
-    // Extra safeguard; loop=true should already restart it.
-    audio.currentTime = 0;
-    startMusic();
-  });
 });
 </script>
 </body>
