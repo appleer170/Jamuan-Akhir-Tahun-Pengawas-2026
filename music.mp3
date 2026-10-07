@@ -1,9 +1,0 @@
-<audio id="bgMusic" src="music.mp3" loop></audio>
-
-<script>
-const music = document.getElementById("bgMusic");
-
-document.addEventListener("click", () => {
-    music.play().catch(() => {});
-}, { once: true });
-</script>
