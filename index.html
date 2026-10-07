@@ -39,7 +39,79 @@
   a,.btn{display:inline-block;text-decoration:none;color:#17130e;background:#e2c77f;border:0;border-radius:999px;padding:13px 22px;font-weight:bold;cursor:pointer;font-family:inherit}
   .secondary{background:transparent;color:#e2c77f;border:1px solid #a98a4d}
   .footer{margin-top:34px;color:#a99d88;font-size:13px;letter-spacing:1px}
-  @media(max-width:600px){.content{padding:42px 20px 32px}.details{grid-template-columns:1fr}.intro{font-size:16px}}
+  @media(max-width:600px){
+    body{
+      min-height:100svh;
+      padding:12px;
+      align-items:flex-start;
+    }
+    .card{
+      width:100%;
+      min-height:calc(100svh - 24px);
+      border-radius:22px;
+    }
+    .content{
+      padding:38px 18px 28px;
+    }
+    .eyebrow{
+      font-size:10px;
+      letter-spacing:3px;
+    }
+    h1{
+      font-size:clamp(30px,9vw,42px);
+      line-height:1.05;
+      margin:14px 0 8px;
+    }
+    .year{
+      font-size:20px;
+      letter-spacing:6px;
+    }
+    .divider{
+      margin:22px auto;
+    }
+    .intro{
+      font-size:15px;
+      line-height:1.6;
+    }
+    .details{
+      grid-template-columns:1fr;
+      gap:10px;
+      margin:26px 0;
+    }
+    .detail{
+      padding:14px 10px;
+    }
+    .theme{
+      margin:22px auto;
+      padding:15px 12px;
+    }
+    .theme span{
+      font-size:18px;
+      line-height:1.4;
+    }
+    .buttons{
+      flex-direction:column;
+      gap:10px;
+      margin-top:22px;
+    }
+    .buttons a,
+    .buttons .btn{
+      width:100%;
+      text-align:center;
+      padding:12px 18px;
+    }
+    .qr-wrap{
+      margin-top:22px;
+      padding:14px;
+    }
+    .qr-wrap img{
+      width:170px;
+      height:170px;
+    }
+    .footer{
+      margin-top:26px;
+    }
+  }
 
 
   .qr-wrap{margin:28px auto 0;padding:18px;border:1px solid rgba(200,169,107,.45);border-radius:16px;background:rgba(255,255,255,.035);max-width:260px}
